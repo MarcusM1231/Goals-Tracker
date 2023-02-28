@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b02b3ece-20e7-4e7b-8f2d-9ce9c2023cbb": {
+      "ProjectGuid": "b02b3ece-20e7-4e7b-8f2d-9ce9c2023cbb",
+      "DisplayName": "GoalTracker",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

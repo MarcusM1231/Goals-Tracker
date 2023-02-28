@@ -1,0 +1,18 @@
+﻿<Window x:Class="GoalTracker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoalTracker"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="HomeButton" Click="HomeButton_Click"  Height="30" VerticalAlignment="Top" Margin="45,5,655,0">Home</Button>
+        <Button x:Name="DailyButton" Click="DailyButton_Click"  Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="246,5,0,0">Daily</Button>
+        <Button x:Name="EventButton" Click="EventButton_Click"  Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="458,5,0,0">Events</Button>
+        <Button x:Name="SpecialButton" Click="SpecialButton_Click"  Height="30" VerticalAlignment="Top" Margin="655,5,45,0">Special</Button>
+
+        <Frame x:Name="CurrentPage" Source="/Pages/HomePage.xaml" x:FieldModifier="public" NavigationUIVisibility="Hidden"  Margin="3,50,3,10"></Frame>
+
+    </Grid>
+</Window>

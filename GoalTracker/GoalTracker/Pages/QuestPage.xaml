@@ -1,0 +1,22 @@
+﻿<Page x:Class="GoalTracker.Pages.QuestPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GoalTracker.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Background="White"
+      Title="QuestPage">
+
+    <Grid>
+        <Label x:Name="PageName" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0">Daily Page</Label>
+
+        <Button x:Name="AddQuest" Click="AddQuest_Click"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,48,0,0" Height="24" Width="40">Add</Button>
+
+        <ScrollViewer HorizontalAlignment="Center" Padding="0" Margin="10,89,10,10" Width="768" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="sp" Margin="10,0,10,29" Height="auto" Width="auto" />
+        </ScrollViewer>
+
+    </Grid>
+</Page>
