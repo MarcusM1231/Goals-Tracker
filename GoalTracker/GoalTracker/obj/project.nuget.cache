@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FG0RtxElq/LyqD1/RscresZy0k7Q1WQ1x5/09WdO0EhJvcWQAU+/6rK9uOVrMLBgy+eiKEOEYYcXujYlIGHaQw==",
+  "dgSpecHash": "UdiHRnB5mCRBdeArStktO+xt4SJGLK1BYYL236kBld/v6bJQqVN18r6T+lUR+pTTF6GzYeCJMa9gV+83LwRYOg==",
   "success": true,
-  "projectFilePath": "C:\\Personal Apps\\GoalTracker\\GoalTracker\\GoalTracker.csproj",
+  "projectFilePath": "C:\\Personal Apps\\Goals-Tracker\\GoalTracker\\GoalTracker\\GoalTracker.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -23,6 +23,7 @@ namespace GoalTracker.Pages
     {
         private string currentPage;
         private MainWindow Form = Application.Current.Windows[0] as MainWindow;
+
         public QuestPage(string page)
         {
             InitializeComponent();
@@ -41,13 +42,38 @@ namespace GoalTracker.Pages
                     Button button = new Button()
                     {
                         Content = quest.questName,
-                        Tag = quest
+                        Tag = quest,
+                        Width = 200,
+                        
+                        
                     };
 
+                    Button deleteButton = new Button()
+                    {
+                        Content = "🗑",
+                        Tag = quest,
+                        Width = 200
+                       
+                      
+                       
+                    };
+
+
                     button.Click += new RoutedEventHandler(QuestClicked);
-                    sp.Children.Add(button);
+                    deleteButton.Click += new RoutedEventHandler(DeleteButtonClicked);
+
+                    innerPanel.Children.Add(button);
+                    innerPanel.Children.Add(deleteButton);
+                    
+
                 }
-            }
+            }            
+        }
+
+        private void DeleteButtonClicked(object sender, RoutedEventArgs e)
+        {
+            QuestLists.quests.Remove((Quests)(sender as Button).Tag);
+            Form.CurrentPage.NavigationService.Navigate(new QuestPage(currentPage));
         }
 
         private void QuestClicked(object sender, RoutedEventArgs e)

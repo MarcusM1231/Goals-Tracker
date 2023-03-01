@@ -14,9 +14,20 @@
 
         <Button x:Name="AddQuest" Click="AddQuest_Click"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,48,0,0" Height="24" Width="40">Add</Button>
 
+       
+
         <ScrollViewer HorizontalAlignment="Center" Padding="0" Margin="10,89,10,10" Width="768" VerticalScrollBarVisibility="Auto">
-            <StackPanel x:Name="sp" Margin="10,0,10,29" Height="auto" Width="auto" />
+            
+            <StackPanel x:Name="outerPanel" Margin="10,0,10,29" Height="auto" Width="auto" Orientation="Vertical" >
+                <WrapPanel HorizontalAlignment="Center" x:Name="innerPanel" Orientation="Horizontal" Width="400"/>
+
+            </StackPanel>
+
+
+
         </ScrollViewer>
+
+
 
     </Grid>
 </Page>

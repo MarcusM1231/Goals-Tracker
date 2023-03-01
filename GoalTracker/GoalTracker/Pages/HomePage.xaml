@@ -21,7 +21,7 @@
         <Label VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,225,0,0">Monthly Goal:</Label>
         <Label VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,256,0,0">Yearly Goal:</Label>
 
-        <Button  Margin="0,0,47,285" HorizontalAlignment="Right" Width="101" Height="31" VerticalAlignment="Bottom">Edit</Button>
+        <Button x:Name="EditButton" Click="EditButton_Click"  Margin="0,0,47,285" HorizontalAlignment="Right" Width="101" Height="31" VerticalAlignment="Bottom">Edit</Button>
 
     </Grid>
 </Page>

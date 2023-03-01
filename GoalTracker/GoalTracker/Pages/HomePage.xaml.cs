@@ -24,5 +24,10 @@ namespace GoalTracker.Pages
         {
             InitializeComponent();
         }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

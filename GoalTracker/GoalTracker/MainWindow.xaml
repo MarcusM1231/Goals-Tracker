@@ -5,14 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GoalTracker"
         mc:Ignorable="d"
+        ResizeMode="CanMinimize"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="HomeButton" Click="HomeButton_Click"  Height="30" VerticalAlignment="Top" Margin="45,5,655,0">Home</Button>
-        <Button x:Name="DailyButton" Click="DailyButton_Click"  Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="246,5,0,0">Daily</Button>
-        <Button x:Name="EventButton" Click="EventButton_Click"  Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="458,5,0,0">Events</Button>
-        <Button x:Name="SpecialButton" Click="SpecialButton_Click"  Height="30" VerticalAlignment="Top" Margin="655,5,45,0">Special</Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="207*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="HomeButton" Click="HomeButton_Click" Margin="45,5,0,0" Grid.RowSpan="2" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">Home</Button>
+        <Button x:Name="DailyButton" Click="DailyButton_Click"  Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="249,5,0,0" Grid.RowSpan="2">Daily</Button>
+        <Button x:Name="EventButton" Click="EventButton_Click"  Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="466,5,0,0" Grid.RowSpan="2">Events</Button>
+        <Button x:Name="SpecialButton" Click="SpecialButton_Click"  Height="30" VerticalAlignment="Top" Margin="655,5,0,0" HorizontalAlignment="Left" Width="100" Grid.RowSpan="2">Special</Button>
 
-        <Frame x:Name="CurrentPage" Source="/Pages/HomePage.xaml" x:FieldModifier="public" NavigationUIVisibility="Hidden"  Margin="3,50,3,10"></Frame>
+        <Frame x:Name="CurrentPage" Source="/Pages/HomePage.xaml" x:FieldModifier="public" NavigationUIVisibility="Hidden"  Margin="3,30,3,10" Grid.Row="1"></Frame>
 
     </Grid>
 </Window>

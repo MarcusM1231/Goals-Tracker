@@ -9,5 +9,6 @@ namespace GoalTracker.Data
     public static class QuestLists
     {
         public static List<Quests> quests = new List<Quests>();
+        public static List<Quests> completedQuests = new List<Quests>();
     }
 }

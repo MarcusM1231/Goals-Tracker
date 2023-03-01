@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Personal Apps\\GoalTracker\\GoalTracker\\GoalTracker.csproj",
+      "projectUniqueName": "C:\\Personal Apps\\Goals-Tracker\\GoalTracker\\GoalTracker\\GoalTracker.csproj",
       "projectName": "GoalTracker",
-      "projectPath": "C:\\Personal Apps\\GoalTracker\\GoalTracker\\GoalTracker.csproj",
+      "projectPath": "C:\\Personal Apps\\Goals-Tracker\\GoalTracker\\GoalTracker\\GoalTracker.csproj",
       "packagesPath": "C:\\Users\\mmoore\\.nuget\\packages\\",
-      "outputPath": "C:\\Personal Apps\\GoalTracker\\GoalTracker\\obj\\",
+      "outputPath": "C:\\Personal Apps\\Goals-Tracker\\GoalTracker\\GoalTracker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
