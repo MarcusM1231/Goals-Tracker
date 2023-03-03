@@ -31,24 +31,29 @@ namespace GoalTracker.Pages
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
-            Quests quest;
-            switch (typeOfQuest)
+            if (!string.IsNullOrWhiteSpace(QuestTitle.Text))
             {
-                case "Daily":
-                    quest = new DailyQuests(QuestTitle.Text, QuestDesc.Text, typeOfQuest);
-                    break;
-                case "Event":
-                    quest = new EventQuests(QuestTitle.Text, QuestDesc.Text, typeOfQuest);
-                    break;
-                default:
-                    quest = new SpecialQuests(QuestTitle.Text, QuestDesc.Text, typeOfQuest);
-                    break;
+                Quests quest;
+                switch (typeOfQuest)
+                {
+                    case "Daily":
+                        quest = new DailyQuests(QuestTitle.Text, QuestDesc.Text, typeOfQuest);
+                        break;
+                    case "Event":
+                        quest = new EventQuests(QuestTitle.Text, QuestDesc.Text, typeOfQuest);
+                        break;
+                    default:
+                        quest = new SpecialQuests(QuestTitle.Text, QuestDesc.Text, typeOfQuest);
+                        break;
+                }
+
+                QuestLists.quests.Add(quest);
+                NavigatePage();
             }
-
-            QuestLists.quests.Add(quest);
-
-            //NavigatePage($"/Pages/{typeOfQuest}Page.xaml");
-            NavigatePage();
+            else
+            {
+                MessageBox.Show("Please Enter a Quest Title");
+            }
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

@@ -6,20 +6,28 @@
       xmlns:local="clr-namespace:GoalTracker.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Background="White"
+      Background="WhiteSmoke"
       Title="QuestPage">
+    
+
 
     <Grid>
         <Label x:Name="PageName" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0">Daily Page</Label>
 
-        <Button x:Name="AddQuest" Click="AddQuest_Click"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,48,0,0" Height="24" Width="40">Add</Button>
+        <Button x:Name="AddQuest" Click="AddQuest_Click"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,48,0,0" Height="24" Width="40">➕</Button>
 
-       
-
+       <!-- Stack Panels for quest buttons -->
         <ScrollViewer HorizontalAlignment="Center" Padding="0" Margin="10,89,10,10" Width="768" VerticalScrollBarVisibility="Auto">
             
             <StackPanel x:Name="outerPanel" Margin="10,0,10,29" Height="auto" Width="auto" Orientation="Vertical" >
-                <WrapPanel HorizontalAlignment="Center" x:Name="innerPanel" Orientation="Horizontal" Width="400"/>
+                <WrapPanel HorizontalAlignment="Center" x:Name="innerPanel"  Orientation="Horizontal" Width="400">
+                    <WrapPanel.Resources>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Margin" Value="10,10" />
+                            <Setter Property="Padding" Value="10,10" />
+                        </Style>
+                    </WrapPanel.Resources>
+                </WrapPanel>
 
             </StackPanel>
 

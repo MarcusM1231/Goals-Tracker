@@ -29,13 +29,12 @@ namespace GoalTracker
 
             thisQuest = quest;
             QuestTitle.Content = quest.questName;
-            QuestDesc.Content = quest.questDesc;
+            QuestDesc.Text = quest.questDesc;
         }
 
-        private void RemoveQuestButton_Click(object sender, RoutedEventArgs e)
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            QuestLists.quests.Remove(thisQuest);
-            //Form.CurrentPage.Refresh();
             this.Close();
             Form.CurrentPage.NavigationService.Navigate(new QuestPage(thisQuest.questType));
         }

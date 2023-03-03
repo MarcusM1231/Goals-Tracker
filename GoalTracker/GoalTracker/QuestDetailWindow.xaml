@@ -6,14 +6,23 @@
         xmlns:local="clr-namespace:GoalTracker"
         mc:Ignorable="d"
         ResizeMode="NoResize"
+        Background="WhiteSmoke"
         Title="QuestDetailWindow" Height="450" Width="450">
     <Grid>
 
         <Label x:Name="QuestTitle" Width="auto" Height="auto" FontSize="20" Margin="0,0,295,374">Quest Title</Label>
 
-        <Label x:Name="QuestDesc" Background="LightGray" Margin="21,65,64,138">Desc</Label>
-
-        <Button x:Name="RemoveQuestButton" VerticalAlignment="Top" Height="45" Click="RemoveQuestButton_Click"  Background="LightGray" Foreground="Red" Margin="152,333,152,0">Remove Quest</Button>
+        <Border BorderThickness="1" BorderBrush="Teal" CornerRadius="10" Padding="5" Background="Teal" Margin="42,66,42,137">
+            <TextBlock x:Name="QuestDesc" Background="Teal" TextWrapping="Wrap">Desc</TextBlock>
+        </Border>
+        
+        <Button x:Name="BackButton" Content="Back" VerticalAlignment="Top" Height="45" Click="BackButton_Click"  Background="Teal" Margin="152,333,152,0">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
 
     </Grid>
 </Window>

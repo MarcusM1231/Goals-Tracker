@@ -6,22 +6,40 @@
       xmlns:local="clr-namespace:GoalTracker.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Background="White"
+      Background="WhiteSmoke"
       Title="HomePage">
+
+    <Page.Resources>
+        <Style x:Key="FontColor">
+            <Setter Property="Control.Foreground" Value="Black"/>
+        </Style>
+        
+    </Page.Resources>
+
 
     <Grid>
 
-        <Label HorizontalAlignment="Left" Margin="3,37,0,0" Height="26" VerticalAlignment="Top">Home Page</Label>
+        <Label Style="{StaticResource FontColor}" HorizontalAlignment="Left" Margin="3,37,0,0" Height="26" VerticalAlignment="Top">Home Page</Label>
 
-        <Label VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,108,0,0">Total Points:</Label>
+        <!-- Total Points-->
+        <Label Style="{StaticResource FontColor}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,108,0,0">Total Points:</Label>
+        <Label Style="{StaticResource FontColor}" x:Name="totalPoints" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="75,108,0,0">0</Label>
 
-        <Label VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,139,0,0">Total Missions Completed:</Label>
+        <!-- Total Quests Completed-->
+        <Label Style="{StaticResource FontColor}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,139,0,0">Total Goals Completed:</Label>
+        <Label Style="{StaticResource FontColor}" x:Name="totalCompleted" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="130,139,0,0">0</Label>
 
-        <Label VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,194,0,0">Daily Goal:</Label>
-        <Label VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,225,0,0">Monthly Goal:</Label>
-        <Label VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,256,0,0">Yearly Goal:</Label>
 
-        <Button x:Name="EditButton" Click="EditButton_Click"  Margin="0,0,47,285" HorizontalAlignment="Right" Width="101" Height="31" VerticalAlignment="Bottom">Edit</Button>
+
+        <Label Style="{StaticResource FontColor}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,194,0,0">Daily Goal:</Label>
+        <!--<TextBox x:Name="DailyGoalBox" Background="LightGray" Margin="75,194,0,0" HorizontalAlignment="Left" Width="56" Height="31" VerticalAlignment="Top"></TextBox>-->
+
+
+        <Label Style="{StaticResource FontColor}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,225,0,0">Monthly Goal:</Label>
+        <Label Style="{StaticResource FontColor}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,256,0,0">Yearly Goal:</Label>
+
+        <Button  x:Name="EditButton" Click="EditButton_Click"  Margin="0,0,47,285" HorizontalAlignment="Right" Width="101" Height="31" VerticalAlignment="Bottom" Visibility="Visible">Edit</Button>
+        <Button x:Name="DoneButton" Click="DoneButton_Click"  Margin="0,0,47,285" HorizontalAlignment="Right" Width="101" Height="31" VerticalAlignment="Bottom" Visibility="Hidden">Done</Button>
 
     </Grid>
 </Page>

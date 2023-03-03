@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:GoalTracker"
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
+        Background="Teal"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>

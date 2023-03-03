@@ -6,6 +6,29 @@ using System.Threading.Tasks;
 
 namespace GoalTracker.Data
 {
+
+    //public class Quests
+    //{
+    //    public string questName;
+    //    public string questDesc;
+    //    public bool questCompleted = false;
+    //    public int timeLimit;
+    //    public string questType;
+    //    public int points;
+    //    public int totalPoints;
+
+    //    public Quests(string questName, string questDesc, string questType)
+    //    {
+    //        this.questName = questName;
+    //        this.questDesc = questDesc;
+    //        this.questType = questType;
+    //        questCompleted = false;
+    //        totalPoints = 0;
+    //    }
+
+
+    //}
+
     public abstract class Quests
     {
         public string questName;
@@ -13,11 +36,15 @@ namespace GoalTracker.Data
         public bool questCompleted = false;
         public int timeLimit;
         public string questType;
+        public int points;
+        public int totalPoints;
 
         protected Quests()
         {
             questCompleted = false;
+            //totalPoints = 0;
         }
+
 
     }
 
@@ -29,6 +56,9 @@ namespace GoalTracker.Data
             this.questDesc = questDesc;
             this.timeLimit = 24;
             this.questType = questType;
+            points = 5;
+
+
         }
     }
 
@@ -40,6 +70,7 @@ namespace GoalTracker.Data
             this.questDesc = questDesc;
             this.timeLimit = 168;
             this.questType = questType;
+            points = 10;
         }
 
     }
@@ -51,6 +82,7 @@ namespace GoalTracker.Data
             this.questName = questName;
             this.questDesc = questDesc;
             this.questType = questType;
+            points = 50;
         }
 
     }

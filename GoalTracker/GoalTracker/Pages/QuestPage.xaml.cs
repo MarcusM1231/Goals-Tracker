@@ -10,9 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace GoalTracker.Pages
 {
@@ -23,17 +21,20 @@ namespace GoalTracker.Pages
     {
         private string currentPage;
         private MainWindow Form = Application.Current.Windows[0] as MainWindow;
+        MessageBoxResult result;
+
 
         public QuestPage(string page)
         {
             InitializeComponent();
+
             currentPage = page;
             PageName.Content = currentPage;
 
-            PageContent();
+            ButtonContent();
         }
 
-        private void PageContent()
+        private void ButtonContent()
         {
             foreach (Quests quest in QuestLists.quests)
             {
@@ -44,6 +45,15 @@ namespace GoalTracker.Pages
                         Content = quest.questName,
                         Tag = quest,
                         Width = 200,
+                        Background = Brushes.Teal
+                    };
+
+                    Button submitButton = new Button()
+                    {
+                        Content = "✅",
+                        Tag = quest,
+                        Width = 50 ,
+                        Background = Brushes.Teal,
                         
                         
                     };
@@ -52,37 +62,61 @@ namespace GoalTracker.Pages
                     {
                         Content = "🗑",
                         Tag = quest,
-                        Width = 200
-                       
-                      
-                       
+                        Width = 50,
+                        Background = Brushes.Teal
                     };
 
+                    Style buttonStyle = new Style(typeof(Button));
+                    buttonStyle.Setters.Add(new Setter(Border.CornerRadiusProperty, new CornerRadius(10)));
+                    button.Style = buttonStyle;
 
                     button.Click += new RoutedEventHandler(QuestClicked);
-                    deleteButton.Click += new RoutedEventHandler(DeleteButtonClicked);
+                    submitButton.Click += new RoutedEventHandler(CompleteButtonClicked);
+                    deleteButton.Click += new RoutedEventHandler(DeleteButtonCLicked);
 
                     innerPanel.Children.Add(button);
-                    innerPanel.Children.Add(deleteButton);
+                    innerPanel.Children.Add(submitButton);
+                    innerPanel.Children.Add(deleteButton);  
                     
-
                 }
             }            
         }
 
-        private void DeleteButtonClicked(object sender, RoutedEventArgs e)
-        {
-            QuestLists.quests.Remove((Quests)(sender as Button).Tag);
-            Form.CurrentPage.NavigationService.Navigate(new QuestPage(currentPage));
-        }
-
+        // Opens a new window with the quest detail whenever the quest is clicked
         private void QuestClicked(object sender, RoutedEventArgs e)
-        {
-
+        {       
             QuestDetailWindow detailWindow = new QuestDetailWindow((Quests)(sender as Button).Tag);
             detailWindow.ShowDialog();
         }
 
+        // Completes the quest and removes it from your list of quests
+        private void CompleteButtonClicked(object sender, RoutedEventArgs e)
+        {
+            result = MessageBox.Show("Do you want to submit this quest?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                // User clicked Yes
+                QuestLists.completedQuests.Add((Quests)(sender as Button).Tag);
+                QuestLists.quests.Remove((Quests)(sender as Button).Tag);
+                Form.CurrentPage.NavigationService.Navigate(new QuestPage(currentPage));
+            }            
+        }
+
+        //Deletes the quest and removes it from the list of quests
+        private void DeleteButtonCLicked(object sender, RoutedEventArgs e)
+        {
+            result = MessageBox.Show("Do you want to remove this quest?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                // User clicked Yes
+                QuestLists.quests.Remove((Quests)(sender as Button).Tag);
+                Form.CurrentPage.NavigationService.Navigate(new QuestPage(currentPage));
+            }
+        }
+
+        //Takes you to a new page where you create a new quest
         private void AddQuest_Click(object sender, RoutedEventArgs e)
         {
             Form.CurrentPage.NavigationService.Navigate(new CreateQuestPage(currentPage));
