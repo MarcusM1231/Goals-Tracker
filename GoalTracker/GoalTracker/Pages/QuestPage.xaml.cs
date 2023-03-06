@@ -21,9 +21,7 @@ namespace GoalTracker.Pages
     {
         private string currentPage;
         private MainWindow Form = Application.Current.Windows[0] as MainWindow;
-        MessageBoxResult result;
-
-
+        
         public QuestPage(string page)
         {
             InitializeComponent();
@@ -53,9 +51,7 @@ namespace GoalTracker.Pages
                         Content = "✅",
                         Tag = quest,
                         Width = 50 ,
-                        Background = Brushes.Teal,
-                        
-                        
+                        Background = Brushes.Teal                                              
                     };
 
                     Button deleteButton = new Button()
@@ -66,18 +62,14 @@ namespace GoalTracker.Pages
                         Background = Brushes.Teal
                     };
 
-                    Style buttonStyle = new Style(typeof(Button));
-                    buttonStyle.Setters.Add(new Setter(Border.CornerRadiusProperty, new CornerRadius(10)));
-                    button.Style = buttonStyle;
-
+                   
                     button.Click += new RoutedEventHandler(QuestClicked);
                     submitButton.Click += new RoutedEventHandler(CompleteButtonClicked);
                     deleteButton.Click += new RoutedEventHandler(DeleteButtonCLicked);
 
                     innerPanel.Children.Add(button);
                     innerPanel.Children.Add(submitButton);
-                    innerPanel.Children.Add(deleteButton);  
-                    
+                    innerPanel.Children.Add(deleteButton);                
                 }
             }            
         }
@@ -92,7 +84,7 @@ namespace GoalTracker.Pages
         // Completes the quest and removes it from your list of quests
         private void CompleteButtonClicked(object sender, RoutedEventArgs e)
         {
-            result = MessageBox.Show("Do you want to submit this quest?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            var result = ConfirmationBox("Do you want to submit this quest?");
 
             if (result == MessageBoxResult.Yes)
             {
@@ -106,7 +98,7 @@ namespace GoalTracker.Pages
         //Deletes the quest and removes it from the list of quests
         private void DeleteButtonCLicked(object sender, RoutedEventArgs e)
         {
-            result = MessageBox.Show("Do you want to remove this quest?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            var result = ConfirmationBox("Do you want to remove this quest ?");
 
             if (result == MessageBoxResult.Yes)
             {
@@ -120,6 +112,13 @@ namespace GoalTracker.Pages
         private void AddQuest_Click(object sender, RoutedEventArgs e)
         {
             Form.CurrentPage.NavigationService.Navigate(new CreateQuestPage(currentPage));
+        }
+
+        public MessageBoxResult ConfirmationBox(string promt)
+        {
+            var result = MessageBox.Show(promt, "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            return result;
         }
     }
 }

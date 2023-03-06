@@ -55,3 +55,4 @@ C:\Personal Apps\Goals-Tracker\GoalTracker\GoalTracker\obj\Debug\net6.0-windows\
 C:\Personal Apps\Goals-Tracker\GoalTracker\GoalTracker\obj\Debug\net6.0-windows\ref\GoalTracker.dll
 C:\Personal Apps\Goals-Tracker\GoalTracker\GoalTracker\obj\Debug\net6.0-windows\GoalTracker.pdb
 C:\Personal Apps\Goals-Tracker\GoalTracker\GoalTracker\obj\Debug\net6.0-windows\GoalTracker.genruntimeconfig.cache
+C:\Personal Apps\Goals-Tracker\GoalTracker\GoalTracker\obj\Debug\net6.0-windows\GoalTracker.csproj.AssemblyReference.cache

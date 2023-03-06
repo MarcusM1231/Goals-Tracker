@@ -21,7 +21,7 @@ namespace GoalTracker.Pages
     /// </summary>
     public partial class HomePage : Page
     {
-        public static int getTotalPoints = 0;
+        public int getTotalPoints = 0;
         
         public HomePage()
         {
