@@ -15,8 +15,16 @@
         <Border BorderThickness="1" BorderBrush="Teal" CornerRadius="10" Padding="5" Background="Teal" Margin="42,66,42,137">
             <TextBlock x:Name="QuestDesc" Background="Teal" TextWrapping="Wrap">Desc</TextBlock>
         </Border>
-        
-        <Button x:Name="BackButton" Content="Back" VerticalAlignment="Top" Height="45" Click="BackButton_Click"  Background="Teal" Margin="152,333,152,0">
+
+        <Button x:Name="BackButton" Content="Back" VerticalAlignment="Top" Height="45" Click="BackButton_Click"  Background="Teal" Margin="23,333,281,0">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="RemoveButton" Content="Remove" VerticalAlignment="Top" Height="46" Click="RemoveButton_Click"  Background="Teal" Margin="268,328,36,0">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"></Setter>

@@ -32,15 +32,17 @@ namespace GoalTracker.Pages
             ButtonContent();
         }
 
+        //Diaplys the Quest buttons on the screen on the correct page 
         private void ButtonContent()
         {
-            foreach (Quests quest in QuestLists.quests)
+            
+            foreach (Goals quest in GoalLists.activeGoals)
             {
-                if (quest.questType == currentPage)
+                if (quest.goalType == currentPage)
                 {
                     Button button = new Button()
                     {
-                        Content = quest.questName,
+                        Content = quest.goalName,
                         Tag = quest,
                         Width = 200,
                         Background = Brushes.Teal
@@ -77,7 +79,7 @@ namespace GoalTracker.Pages
         // Opens a new window with the quest detail whenever the quest is clicked
         private void QuestClicked(object sender, RoutedEventArgs e)
         {       
-            QuestDetailWindow detailWindow = new QuestDetailWindow((Quests)(sender as Button).Tag);
+            QuestDetailWindow detailWindow = new QuestDetailWindow((Goals)(sender as Button).Tag);
             detailWindow.ShowDialog();
         }
 
@@ -89,8 +91,8 @@ namespace GoalTracker.Pages
             if (result == MessageBoxResult.Yes)
             {
                 // User clicked Yes
-                QuestLists.completedQuests.Add((Quests)(sender as Button).Tag);
-                QuestLists.quests.Remove((Quests)(sender as Button).Tag);
+                GoalLists.completedGoals.Add((Goals)(sender as Button).Tag);
+                GoalLists.activeGoals.Remove((Goals)(sender as Button).Tag);
                 Form.CurrentPage.NavigationService.Navigate(new QuestPage(currentPage));
             }            
         }
@@ -103,7 +105,7 @@ namespace GoalTracker.Pages
             if (result == MessageBoxResult.Yes)
             {
                 // User clicked Yes
-                QuestLists.quests.Remove((Quests)(sender as Button).Tag);
+                GoalLists.activeGoals.Remove((Goals)(sender as Button).Tag);
                 Form.CurrentPage.NavigationService.Navigate(new QuestPage(currentPage));
             }
         }

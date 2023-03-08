@@ -22,32 +22,34 @@ namespace GoalTracker.Pages
     public partial class CreateQuestPage : Page
     {
         private MainWindow Form = Application.Current.Windows[0] as MainWindow;
-        private string typeOfQuest;
+        private string typeOfGoal;
         public CreateQuestPage(string type)
         {
             InitializeComponent();
-            typeOfQuest = type;
+            typeOfGoal = type;
         }
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(QuestTitle.Text))
             {
-                Quests quest;
-                switch (typeOfQuest)
+                Goals goal;
+                switch (typeOfGoal)
                 {
                     case "Daily":
-                        quest = new DailyQuests(QuestTitle.Text, QuestDesc.Text, typeOfQuest);
+                        goal = new DailyGoals(QuestTitle.Text, QuestDesc.Text, typeOfGoal);
+                        GoalLists.dailyGoals.Add(goal);
                         break;
                     case "Event":
-                        quest = new EventQuests(QuestTitle.Text, QuestDesc.Text, typeOfQuest);
+                        goal = new WeeklyGoals(QuestTitle.Text, QuestDesc.Text, typeOfGoal);
+                        GoalLists.weeklyGoals.Add(goal);
                         break;
                     default:
-                        quest = new SpecialQuests(QuestTitle.Text, QuestDesc.Text, typeOfQuest);
+                        goal = new LongtermGoals(QuestTitle.Text, QuestDesc.Text, typeOfGoal);
                         break;
                 }
 
-                QuestLists.quests.Add(quest);
+                GoalLists.activeGoals.Add(goal);
                 NavigatePage();
             }
             else
@@ -64,7 +66,7 @@ namespace GoalTracker.Pages
         //Navigates back to the orginal quest Page
         private void NavigatePage()
         {
-            Form.CurrentPage.NavigationService.Navigate(new QuestPage(typeOfQuest));
+            Form.CurrentPage.NavigationService.Navigate(new QuestPage(typeOfGoal));
         }
     }
 }

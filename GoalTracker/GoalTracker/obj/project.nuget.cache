@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UdiHRnB5mCRBdeArStktO+xt4SJGLK1BYYL236kBld/v6bJQqVN18r6T+lUR+pTTF6GzYeCJMa9gV+83LwRYOg==",
+  "dgSpecHash": "CpGrXkBFOQZ9zVJSaITzr7BCJKkczl8tZxY0wT2g77Wd0InHZpq1bXE+4gsVPz7bv/VfB3NXd04mr6aqHg/Kgg==",
   "success": true,
   "projectFilePath": "C:\\Personal Apps\\Goals-Tracker\\GoalTracker\\GoalTracker\\GoalTracker.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mmoore\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

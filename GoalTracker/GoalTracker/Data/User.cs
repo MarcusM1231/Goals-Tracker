@@ -16,7 +16,7 @@ namespace GoalTracker.Data
         {
             
 
-            foreach (Quests quest in QuestLists.quests)
+            foreach (Goals quest in GoalLists.activeGoals)
             {
                 totalPoints += quest.points;
             }

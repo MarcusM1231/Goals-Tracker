@@ -1,6 +1,9 @@
-﻿using GoalTracker.Pages;
+﻿using GoalTracker.Data;
+using GoalTracker.Pages;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+
 namespace GoalTracker
 {
     /// <summary>
@@ -24,6 +29,9 @@ namespace GoalTracker
         public MainWindow()
         {
             InitializeComponent();
+
+            DailyTimer timer = new DailyTimer();
+            LoadList();
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
@@ -54,6 +62,30 @@ namespace GoalTracker
         private void NavigatePage(string page)
         {
             CurrentPage.Navigate(new Uri(page, UriKind.Relative));
+        }
+
+        //Saving and loading 
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            // Save the list when the window is closing
+            SaveList();
+        }
+
+        private void SaveList()
+        {
+            string json = JsonConvert.SerializeObject(GoalLists.activeGoals);
+            File.WriteAllText("myList.json", json);
+        }
+
+        private void LoadList()
+        {
+            if (File.Exists("myList.json"))
+            {
+                string json = File.ReadAllText("myList.json");
+                GoalLists.activeGoals = JsonConvert.DeserializeObject<List<Goals>>(json);
+            }
+ 
         }
     }
 }

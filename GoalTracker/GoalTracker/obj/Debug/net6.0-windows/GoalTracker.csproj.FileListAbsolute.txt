@@ -56,3 +56,5 @@ C:\Personal Apps\Goals-Tracker\GoalTracker\GoalTracker\obj\Debug\net6.0-windows\
 C:\Personal Apps\Goals-Tracker\GoalTracker\GoalTracker\obj\Debug\net6.0-windows\GoalTracker.pdb
 C:\Personal Apps\Goals-Tracker\GoalTracker\GoalTracker\obj\Debug\net6.0-windows\GoalTracker.genruntimeconfig.cache
 C:\Personal Apps\Goals-Tracker\GoalTracker\GoalTracker\obj\Debug\net6.0-windows\GoalTracker.csproj.AssemblyReference.cache
+C:\Personal Apps\Goals-Tracker\GoalTracker\GoalTracker\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Personal Apps\Goals-Tracker\GoalTracker\GoalTracker\obj\Debug\net6.0-windows\GoalTracker.csproj.CopyComplete

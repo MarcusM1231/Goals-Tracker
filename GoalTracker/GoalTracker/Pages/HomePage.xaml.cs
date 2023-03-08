@@ -28,8 +28,7 @@ namespace GoalTracker.Pages
             InitializeComponent();
 
             totalPoints.Content = TotalPoints();
-            totalCompleted.Content = QuestLists.completedQuests.Count;
-
+            totalCompleted.Content = GoalLists.completedGoals.Count;
             
         }
 
@@ -37,6 +36,7 @@ namespace GoalTracker.Pages
         {
             EditButton.Visibility = Visibility.Hidden;
             DoneButton.Visibility = Visibility.Visible;
+
         }
 
         private void DoneButton_Click(object sender, RoutedEventArgs e)
@@ -49,7 +49,7 @@ namespace GoalTracker.Pages
         public int TotalPoints()
         {
 
-            foreach(Quests val in QuestLists.completedQuests)
+            foreach(Goals val in GoalLists.completedGoals)
             {
                 getTotalPoints += val.points;
             }
