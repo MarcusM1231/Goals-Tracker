@@ -7,14 +7,35 @@ using System.Threading.Tasks;
 namespace GoalTracker.Data
 {
 
-    public class Goals
+    public abstract class Goals
     {
-        public string goalName;
+        public readonly string goalName;
         public string goalDesc;
         public int timeLimit;
         public string goalType;
         public int points;
         public int totalPoints;
+
+
+        public string GetGoalName()
+        {
+            return goalName;
+        }
+
+        public string GetGoalDesc()
+        {
+            return goalDesc;
+        }
+
+        public int GetGoalPoints()
+        {
+            return points;
+        }
+
+        public string GetGoalType()
+        {
+            return goalType;
+        }
     }
 
     public class DailyGoals : Goals

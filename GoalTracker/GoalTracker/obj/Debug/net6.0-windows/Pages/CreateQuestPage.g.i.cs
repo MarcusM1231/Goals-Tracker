@@ -85,7 +85,7 @@ namespace GoalTracker.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/GoalTracker;component/pages/createquestpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GoalTracker;V1.0.0.0;component/pages/createquestpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\CreateQuestPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

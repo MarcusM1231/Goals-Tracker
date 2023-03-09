@@ -51,7 +51,7 @@ namespace GoalTracker.Pages
 
             foreach(Goals val in GoalLists.completedGoals)
             {
-                getTotalPoints += val.points;
+                getTotalPoints += val.GetGoalPoints();
             }
 
             return getTotalPoints;

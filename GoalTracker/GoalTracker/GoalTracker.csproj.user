@@ -7,16 +7,16 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Pages\CreateQuestPage.xaml.cs">
+    <Compile Update="Pages\CreateGoalPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\HomePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\QuestPage.xaml.cs">
+    <Compile Update="Pages\GoalPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="QuestDetailWindow.xaml.cs">
+    <Compile Update="GoalDetailWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -24,16 +24,16 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\CreateQuestPage.xaml">
+    <Page Update="Pages\CreateGoalPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\HomePage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\QuestPage.xaml">
+    <Page Update="Pages\GoalPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="QuestDetailWindow.xaml">
+    <Page Update="GoalDetailWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

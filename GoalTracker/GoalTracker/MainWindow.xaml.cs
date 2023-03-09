@@ -31,7 +31,7 @@ namespace GoalTracker
             InitializeComponent();
 
             DailyTimer timer = new DailyTimer();
-            LoadList();
+            //LoadList();
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
@@ -43,20 +43,19 @@ namespace GoalTracker
         private void DailyButton_Click(object sender, RoutedEventArgs e)
         {
             //NavigatePage("/Pages/DailyPage.xaml");
-            CurrentPage.NavigationService.Navigate(new QuestPage("Daily"));
+            CurrentPage.NavigationService.Navigate(new GoalPage("Daily"));
         }
 
         private void EventButton_Click(object sender, RoutedEventArgs e)
         {
             // NavigatePage("/Pages/EventPage.xaml");
-            CurrentPage.NavigationService.Navigate(new QuestPage("Event"));
+            CurrentPage.NavigationService.Navigate(new GoalPage("Weekly"));
         }
 
-        private void SpecialButton_Click(object sender, RoutedEventArgs e)
+        private void LongtermButton_Click_1(object sender, RoutedEventArgs e)
         {
             //NavigatePage("/Pages/SpecialPage.xaml");
-            CurrentPage.NavigationService.Navigate(new QuestPage("Special"));
-
+            CurrentPage.NavigationService.Navigate(new GoalPage("Long-term"));
         }
 
         private void NavigatePage(string page)
@@ -64,7 +63,7 @@ namespace GoalTracker
             CurrentPage.Navigate(new Uri(page, UriKind.Relative));
         }
 
-        //Saving and loading 
+        ////Saving and loading 
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -74,18 +73,20 @@ namespace GoalTracker
 
         private void SaveList()
         {
-            string json = JsonConvert.SerializeObject(GoalLists.activeGoals);
-            File.WriteAllText("myList.json", json);
+            string json = JsonConvert.SerializeObject(GoalLists.activeGoals, Formatting.Indented);
+            File.WriteAllText("SavedGoals.json", json);
         }
 
         private void LoadList()
         {
-            if (File.Exists("myList.json"))
+            if (File.Exists("SavedGoals.json"))
             {
-                string json = File.ReadAllText("myList.json");
+                string json = File.ReadAllText("SavedGoals.json");
                 GoalLists.activeGoals = JsonConvert.DeserializeObject<List<Goals>>(json);
             }
- 
+
         }
+
+
     }
 }

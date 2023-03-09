@@ -9,6 +9,8 @@
         Background="Teal"
         Title="MainWindow" Height="450" Width="800"
         Closing="Window_Closing">
+
+    <!--Closing="Window_Closing"-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
@@ -16,8 +18,8 @@
         </Grid.RowDefinitions>
         <Button x:Name="HomeButton" Click="HomeButton_Click" Margin="45,5,0,0" Grid.RowSpan="2" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">Home</Button>
         <Button x:Name="DailyButton" Click="DailyButton_Click"  Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="249,5,0,0" Grid.RowSpan="2">Daily</Button>
-        <Button x:Name="EventButton" Click="EventButton_Click"  Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="466,5,0,0" Grid.RowSpan="2">Events</Button>
-        <Button x:Name="SpecialButton" Click="SpecialButton_Click"  Height="30" VerticalAlignment="Top" Margin="655,5,0,0" HorizontalAlignment="Left" Width="100" Grid.RowSpan="2">Special</Button>
+        <Button x:Name="EventButton" Click="EventButton_Click"  Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="466,5,0,0" Grid.RowSpan="2">Weekly</Button>
+        <Button x:Name="LongtermButton" Click="LongtermButton_Click_1"  Height="30" VerticalAlignment="Top" Margin="655,5,0,0" HorizontalAlignment="Left" Width="100" Grid.RowSpan="2">Long-term</Button>
 
         <Frame x:Name="CurrentPage" Source="/Pages/HomePage.xaml" x:FieldModifier="public" NavigationUIVisibility="Hidden"  Margin="3,30,3,10" Grid.Row="1"></Frame>
 

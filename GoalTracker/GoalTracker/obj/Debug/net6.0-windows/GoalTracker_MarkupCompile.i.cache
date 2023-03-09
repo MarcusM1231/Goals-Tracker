@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Personal Apps\Goals-Tracker\GoalTracker\GoalTracker\App.xaml
-5-1665614702
+5873064101
 
-13968602693
+12-1409546670
 195-2054078342
-MainWindow.xaml;Pages\CreateQuestPage.xaml;Pages\HomePage.xaml;Pages\QuestPage.xaml;QuestDetailWindow.xaml;
+GoalDetailWindow.xaml;MainWindow.xaml;Pages\CreateGoalPage.xaml;Pages\GoalPage.xaml;Pages\HomePage.xaml;
 
-False
+True
 

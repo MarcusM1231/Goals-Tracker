@@ -41,7 +41,7 @@ namespace GoalTracker.Data
             // Removes Daily quest from list of current quests
             foreach (var dailyQuest in GoalLists.activeGoals)
             {
-                if (dailyQuest.goalType == "Daily")
+                if (dailyQuest.GetGoalType() == "Daily")
                 {
                     GoalLists.activeGoals.Remove(dailyQuest);
                 }
