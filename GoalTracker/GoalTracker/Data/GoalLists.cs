@@ -12,7 +12,8 @@ namespace GoalTracker.Data
         public static List<Goals> completedGoals = new List<Goals>();
 
         
-        public static List<Goals> dailyGoals = new List<Goals>();
+        public static List<Goals> dailyGoals  = new List<Goals>();
         public static List<Goals> weeklyGoals = new List<Goals>();
     }
+
 }

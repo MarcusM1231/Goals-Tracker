@@ -31,7 +31,7 @@ namespace GoalTracker
             InitializeComponent();
 
             DailyTimer timer = new DailyTimer();
-            //LoadList();
+            LoadList();
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
@@ -73,7 +73,14 @@ namespace GoalTracker
 
         private void SaveList()
         {
-            string json = JsonConvert.SerializeObject(GoalLists.activeGoals, Formatting.Indented);
+            var myListsDict = new Dictionary<string, object>()
+            {
+                { "ActiveGoals", GoalLists.activeGoals },
+                { "CompletedGoals", GoalLists.completedGoals },
+                { "DailyGoals", GoalLists.dailyGoals },
+                { "WeeklyGoals", GoalLists.weeklyGoals }
+            };
+            string json = JsonConvert.SerializeObject(myListsDict, Formatting.Indented);
             File.WriteAllText("SavedGoals.json", json);
         }
 
@@ -82,11 +89,13 @@ namespace GoalTracker
             if (File.Exists("SavedGoals.json"))
             {
                 string json = File.ReadAllText("SavedGoals.json");
-                GoalLists.activeGoals = JsonConvert.DeserializeObject<List<Goals>>(json);
+                var myListsDict = JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
+
+                GoalLists.activeGoals = JsonConvert.DeserializeObject<List<Goals>>(myListsDict["ActiveGoals"].ToString());
+                GoalLists.completedGoals = JsonConvert.DeserializeObject<List<Goals>>(myListsDict["CompletedGoals"].ToString());
+                GoalLists.dailyGoals = JsonConvert.DeserializeObject<List<Goals>>(myListsDict["DailyGoals"].ToString());
+                GoalLists.weeklyGoals = JsonConvert.DeserializeObject<List<Goals>>(myListsDict["WeeklyGoals"].ToString());
             }
-
         }
-
-
     }
 }

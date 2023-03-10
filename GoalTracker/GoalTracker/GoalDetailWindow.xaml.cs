@@ -22,44 +22,44 @@ namespace GoalTracker
     public partial class GoalDetailWindow : Window
     {
         MainWindow Form = Application.Current.Windows[0] as MainWindow;
-        Goals thisQuest;
-        public GoalDetailWindow(Goals quest)
+        Goals thisGoal;
+        public GoalDetailWindow(Goals goal)
         {
             InitializeComponent();
 
-            thisQuest = quest;
-            QuestTitle.Content = quest.GetGoalName();
-            QuestDesc.Text = quest.GetGoalDesc();
+            thisGoal = goal;
+            QuestTitle.Content = goal.GetGoalName();
+            QuestDesc.Text = goal.GetGoalDesc();
         }
 
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            Form.CurrentPage.NavigationService.Navigate(new GoalPage(thisQuest.GetGoalType()));
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            switch (thisQuest.GetGoalType())
+            var result = MessageBox.Show($"This will stop your goal from reoccurring.", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
             {
-                case "Daily":
-                    GoalLists.activeGoals.Remove(thisQuest);
-                    GoalLists.dailyGoals.Remove(thisQuest);
-                    break;
-                case "Event":
-                    GoalLists.activeGoals.Remove(thisQuest);
-                    GoalLists.weeklyGoals.Remove(thisQuest);
-                    break;
-                default:
-                    GoalLists.activeGoals.Remove(thisQuest);
-                    break;
+                switch (thisGoal.GetGoalType())
+                {
+                    case "Daily":
+                        GoalLists.dailyGoals.Remove(thisGoal);
+                        break;
+                    case "Event":
+                        GoalLists.weeklyGoals.Remove(thisGoal);
+                        break;
+                    default:
+                        break;
 
+                }
+
+                this.Close();
+                Form.CurrentPage.NavigationService.Refresh();
             }
-
-
-            this.Close();
-            Form.CurrentPage.NavigationService.Navigate(new GoalPage(thisQuest.GetGoalType()));
         }
     }
 }

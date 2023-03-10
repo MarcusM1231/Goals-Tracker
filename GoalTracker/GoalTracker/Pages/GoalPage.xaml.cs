@@ -27,12 +27,12 @@ namespace GoalTracker.Pages
             InitializeComponent();
 
             currentPage = page;
-            PageName.Content = currentPage;
+            PageName.Content = currentPage + " Goals";
 
             ButtonContent();
         }
 
-        //Diaplys the Quest buttons on the screen on the correct page 
+        //Diaplys the goal buttons on the screen depending on the page
         private void ButtonContent()
         {
             

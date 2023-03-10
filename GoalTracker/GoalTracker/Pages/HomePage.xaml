@@ -13,33 +13,43 @@
         <Style x:Key="FontColor">
             <Setter Property="Control.Foreground" Value="Black"/>
         </Style>
-        
+
     </Page.Resources>
 
 
     <Grid>
 
-        <Label Style="{StaticResource FontColor}" HorizontalAlignment="Left" Margin="3,37,0,0" Height="26" VerticalAlignment="Top">Home Page</Label>
+        <Label Style="{StaticResource FontColor}" HorizontalAlignment="Left" Margin="0,0,0,0" Height="26" VerticalAlignment="Top">Home Page</Label>
 
         <!-- Total Points-->
-        <Label Style="{StaticResource FontColor}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,108,0,0">Total Points:</Label>
-        <Label Style="{StaticResource FontColor}" x:Name="totalPoints" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="75,108,0,0">0</Label>
+        <Label Style="{StaticResource FontColor}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,44,0,0">Total Points:</Label>
+        <Label Style="{StaticResource FontColor}" x:Name="totalPoints" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="73,44,0,0">0</Label>
 
         <!-- Total Quests Completed-->
-        <Label Style="{StaticResource FontColor}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,139,0,0">Total Goals Completed:</Label>
-        <Label Style="{StaticResource FontColor}" x:Name="totalCompleted" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="130,139,0,0">0</Label>
+        <Label Style="{StaticResource FontColor}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,88,0,0">Total Goals Completed:</Label>
+        <Label Style="{StaticResource FontColor}" x:Name="totalCompleted" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="132,88,0,0">0</Label>
 
+        <Label Margin="0,160,0,0" FontSize="20" Height="42" VerticalAlignment="Top" HorizontalAlignment="Left" Width="341">Recent Goals Completed:</Label>
+        <WrapPanel x:Name="RecentGoals" Margin="50,207,-47,61">
+            <WrapPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Margin" Value="10,10" />
 
+                </Style>
+            </WrapPanel.Resources>
+        </WrapPanel>
 
-        <Label Style="{StaticResource FontColor}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,194,0,0">Daily Goal:</Label>
-        <!--<TextBox x:Name="DailyGoalBox" Background="LightGray" Margin="75,194,0,0" HorizontalAlignment="Left" Width="56" Height="31" VerticalAlignment="Top"></TextBox>-->
+        <Button x:Name="ResetButton" Click="ResetButton_Click" Margin="682,33,0,0" HorizontalAlignment="Left" Width="69" Height="39" VerticalAlignment="Top">Reset</Button>
+
+        <!--<Label Style="{StaticResource FontColor}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,194,0,0">Daily Goal:</Label>
+        <TextBox x:Name="DailyGoalBox" Background="LightGray" Margin="75,194,0,0" HorizontalAlignment="Left" Width="56" Height="26" VerticalAlignment="Top"></TextBox>
 
 
         <Label Style="{StaticResource FontColor}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,225,0,0">Monthly Goal:</Label>
-        <Label Style="{StaticResource FontColor}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,256,0,0">Yearly Goal:</Label>
+        <Label Style="{StaticResource FontColor}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,256,0,0">Yearly Goal:</Label>-->
 
-        <Button  x:Name="EditButton" Click="EditButton_Click"  Margin="0,0,47,285" HorizontalAlignment="Right" Width="101" Height="31" VerticalAlignment="Bottom" Visibility="Visible">Edit</Button>
-        <Button x:Name="DoneButton" Click="DoneButton_Click"  Margin="0,0,47,285" HorizontalAlignment="Right" Width="101" Height="31" VerticalAlignment="Bottom" Visibility="Hidden">Done</Button>
+        <!--<Button  x:Name="EditButton" Click="EditButton_Click"  Margin="0,0,47,285" HorizontalAlignment="Right" Width="101" Height="31" VerticalAlignment="Bottom" Visibility="Visible">Edit</Button>
+        <Button x:Name="DoneButton" Click="DoneButton_Click"  Margin="0,0,47,285" HorizontalAlignment="Right" Width="101" Height="31" VerticalAlignment="Bottom" Visibility="Hidden">Done</Button>-->
 
     </Grid>
 </Page>

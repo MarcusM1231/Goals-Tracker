@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace GoalTracker.Data
 {
 
-    public abstract class Goals
+    public class Goals
     {
-        public readonly string goalName;
+        public string goalName;
         public string goalDesc;
         public int timeLimit;
         public string goalType;

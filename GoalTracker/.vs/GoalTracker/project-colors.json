@@ -5,6 +5,11 @@
       "ProjectGuid": "b02b3ece-20e7-4e7b-8f2d-9ce9c2023cbb",
       "DisplayName": "GoalTracker",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 1
