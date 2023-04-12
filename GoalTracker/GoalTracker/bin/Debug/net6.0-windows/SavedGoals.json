@@ -1,0 +1,40 @@
+{
+  "ActiveGoals": [],
+  "CompletedGoals": [
+    {
+      "goalName": "random",
+      "goalDesc": "dddd",
+      "timeLimit": 24,
+      "goalType": "Daily",
+      "points": 5,
+      "totalPoints": 0
+    }
+  ],
+  "DailyGoals": [
+    {
+      "goalName": "t",
+      "goalDesc": "t",
+      "timeLimit": 24,
+      "goalType": "Daily",
+      "points": 5,
+      "totalPoints": 0
+    },
+    {
+      "goalName": "t",
+      "goalDesc": "r",
+      "timeLimit": 24,
+      "goalType": "Daily",
+      "points": 5,
+      "totalPoints": 0
+    },
+    {
+      "goalName": "random",
+      "goalDesc": "dddd",
+      "timeLimit": 24,
+      "goalType": "Daily",
+      "points": 5,
+      "totalPoints": 0
+    }
+  ],
+  "WeeklyGoals": []
+}
